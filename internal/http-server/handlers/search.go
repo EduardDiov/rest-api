@@ -7,7 +7,7 @@ import (
 
 	"diov.local/krasivo/components"
 	"diov.local/krasivo/internal/database"
-	"diov.local/krasivo/models"
+	"diov.local/krasivo/internal/models"
 )
 
 func Search(w http.ResponseWriter, r *http.Request) {

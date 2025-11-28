@@ -3,7 +3,7 @@ package database
 import (
 	"fmt"
 
-	"diov.local/krasivo/models"
+	"diov.local/krasivo/internal/models"
 )
 
 func GetAllCurrencies() ([]models.Currency, error) {
