@@ -3,7 +3,7 @@ package positions
 import (
 	"net/http"
 
-	"diov.local/krasivo/components/positions"
+	"diov.local/krasivo/internal/components/positions"
 )
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {

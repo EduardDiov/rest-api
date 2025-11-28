@@ -1,0 +1,35 @@
+package components
+
+import "diov.local/krasivo/internal/models/site"
+
+templ Navbar(title string) {
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/"><img width="32" src="/images/logo.svg"/></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					for _, navItem := range site.NavItems {
+						@NavbarItem(navItem, title)
+					}
+				</ul>
+			</div>
+		</div>
+	</nav>
+}
+
+templ NavbarItem(navItem site.NavItem, title string) {
+	<li class="nav-item">
+		if navItem.Name == title {
+			<a class="nav-link active" aria-current="page" href={ navItem.Href }>
+				{ navItem.Name }
+			</a>
+		} else {
+			<a class="nav-link" aria-current="page" href={ navItem.Href }>
+				{ navItem.Name }
+			</a>
+		}
+	</li>
+}
